@@ -1,4 +1,5 @@
-module.exports = {
-  mongoURI:
-    "mongodb+srv://root:himadri2898@cluster0-us2n2.mongodb.net/test?retryWrites=true&w=majority",
-};
+if (process.env.Node_ENV === "production") {
+  module.exports = require("./keys_prod");
+} else {
+  module.exports = require("./keys_dev");
+}
